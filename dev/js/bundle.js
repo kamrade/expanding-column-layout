@@ -10254,23 +10254,18 @@ return jQuery;
 } );
 
 },{}],2:[function(require,module,exports){
-var sayHello = require('./say-hello');
-var consoleDebug = require('./modules/console-debug');
 var $ = require('jquery');
-
-sayHello();
-consoleDebug('Me');
 
 var Expand = (function() {
   var tile = $('.strips__strip');
   var tileLink = $('.strips__strip > .strip__content');
   var tileText = tileLink.find('.strip__inner-text');
   var stripClose = $('.strip__close');
-  
+
   var expanded  = false;
 
   var open = function() {
-      
+
     var tile = $(this).parent();
 
       if (!expanded) {
@@ -10280,9 +10275,9 @@ var Expand = (function() {
         stripClose.addClass('strip__close--show');
         stripClose.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
         expanded = true;
-      } 
+      }
     };
-  
+
   var close = function() {
     if (expanded) {
       tile.removeClass('strips__strip--expanded');
@@ -10309,21 +10304,6 @@ var Expand = (function() {
 
   }());
 
-Expand.init();
-},{"./modules/console-debug":3,"./say-hello":4,"jquery":1}],3:[function(require,module,exports){
-var $ = require('jquery');
-
-module.exports = function(output){
-  console.log(output + " : this text is from console-debug module 04");
-  $('.sub-title').text('we are glad to see you');
-};
-
-},{"jquery":1}],4:[function(require,module,exports){
-var $ = require('jquery');
-
-module.exports = function(){
-  console.log('Hello 14');
-  $('.title').text('Welcome here 1');
-};
+// Expand.init();
 
 },{"jquery":1}]},{},[2]);
