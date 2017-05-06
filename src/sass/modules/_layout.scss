@@ -1,3 +1,12 @@
+.app-container {
+  position: relative;
+}
+
+.sidebar {
+  position: absolute;
+
+}
+
 .strips {
   min-height: 100vh;
   text-align: center;
@@ -216,6 +225,9 @@
   @include easeOut;
   cursor: pointer;
   transition-delay: 0.5s;
+  display: block;
+  width: 16px;
+  height: 16px;
 
   &--show {
     opacity: 1;
