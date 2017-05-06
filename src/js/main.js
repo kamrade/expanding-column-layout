@@ -33,19 +33,19 @@ var Expand = (function() {
     }
   }
 
-    var bindActions = function() {
-      tileLink.on('click', open);
-      stripClose.on('click', close);
-    };
+  var bindActions = function() {
+    tileLink.on('click', open);
+    stripClose.on('click', close);
+  };
 
-    var init = function() {
-      bindActions();
-    };
+  var init = function() {
+    bindActions();
+  };
 
-    return {
-      init: init
-    };
+  return {
+    init: init
+  };
 
-  }());
+}());
 
-// Expand.init();
+Expand.init();
