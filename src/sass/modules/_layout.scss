@@ -15,7 +15,7 @@
   min-height: 100%;
   text-align: center;
   overflow: hidden;
-  color: white;
+  color: $color-text;
   position: relative;
 
   &__strip {
@@ -130,6 +130,7 @@
     width: 100%;
     height: 100%;
     text-decoration: none;
+    @include easeOut;
 
     &:hover {
       &:before {
@@ -174,6 +175,10 @@
 
     @include break {
       min-height: 100vh;
+    }
+
+    .strip__content {
+      background: #fff !important;
     }
 
     .strip__content {

@@ -97,10 +97,6 @@ body {
 h1, h2 {
   font-weight: 300; }
 
-.fa {
-  font-size: 30px;
-  color: white; }
-
 h2 {
   font-size: 36px;
   margin: 0 0 16px; }
@@ -136,7 +132,7 @@ p {
   min-height: 100%;
   text-align: center;
   overflow: hidden;
-  color: white;
+  color: #333;
   position: relative; }
   .strips__strip {
     will-change: width, left, z-index, height;
@@ -241,7 +237,8 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
   .strips .strip__content:hover:before {
     -webkit-transform: skew(-30deg) scale(3) translate(0, 0);
     transform: skew(-30deg) scale(3) translate(0, 0);
@@ -282,6 +279,8 @@ p {
   @media screen and (max-width: 760px) {
     .strips__strip--expanded {
       min-height: 100vh; } }
+  .strips__strip--expanded .strip__content {
+    background: #fff !important; }
   .strips__strip--expanded .strip__content:hover:before {
     -webkit-transform: skew(-30deg) scale(1) translate(0, 0);
     transform: skew(-30deg) scale(1) translate(0, 0);
