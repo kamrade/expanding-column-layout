@@ -12,7 +12,7 @@
 }
 
 .strips {
-  min-height: 100vh;
+  min-height: 100%;
   text-align: center;
   overflow: hidden;
   color: white;
@@ -22,32 +22,14 @@
     will-change: width, left, z-index, height;
     position: absolute;
     width: 20%;
-    min-height: 100vh;
+    min-height: 100%;
     overflow: hidden;
     cursor: pointer;
     @include easeOut;
 
     &:nth-child(1) {
       left: 0;
-    }
 
-    &:nth-child(2) {
-      left: 20%;
-    }
-
-    &:nth-child(3) {
-      left: 40%;
-    }
-
-    &:nth-child(4) {
-      left: 60%;
-    }
-
-    &:nth-child(5) {
-      left: 80%;
-    }
-
-    &:nth-child(1) {
       .strip__content {
         background: $color1;
         transform: translate3d(-100%, 0, 0);
@@ -57,6 +39,8 @@
     }
 
     &:nth-child(2) {
+      left: 20%;
+
       .strip__content {
         background: $color2;
         transform: translate3d(0, 100%, 0);
@@ -66,6 +50,8 @@
     }
 
     &:nth-child(3) {
+      left: 40%;
+
       .strip__content {
         background: $color3;
         transform: translate3d(0, -100%, 0);
@@ -75,6 +61,7 @@
     }
 
     &:nth-child(4) {
+      left: 60%;
       .strip__content {
         background: $color4;
         transform: translate3d(0, 100%, 0);
@@ -84,6 +71,8 @@
     }
 
     &:nth-child(5) {
+      left: 80%;
+
       .strip__content {
         background: $color5;
         transform: translate3d(100%, 0, 0);
@@ -93,7 +82,7 @@
     }
 
     @include break {
-      min-height: 20vh;
+      min-height: 20%;
       &:nth-child(1) {
         top: 0;
         left: 0;
@@ -101,33 +90,35 @@
       }
 
       &:nth-child(2) {
-        top: 20vh;
+        top: 20%;
         left: 0;
         width: 100%;
       }
 
       &:nth-child(3) {
-        top: 40vh;
+        top: 40%;
         left: 0;
         width: 100%;
       }
 
       &:nth-child(4) {
-        top: 60vh;
+        top: 60%;
         left: 0;
         width: 100%;
       }
 
       &:nth-child(5) {
-        top: 80vh;
+        top: 80%;
         left: 0;
         width: 100%;
       }
     }
   }
+}
 
+.strips {
   .strip__content {
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
     animation-fill-mode: both;
     display: flex;
@@ -167,20 +158,19 @@
     will-change: transform, opacity;
     position: absolute;
     z-index: 5;
-    top: 50%;
+    top: -50%;
     left: 50%;
-    width: 70%;
-    transform: translate(-50%,-50%) scale(0.5);
+    transform: translate(-50%,-50%);
     opacity: 0;
-    @include easeOut;
+    transition: all .36s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   &__strip--expanded {
     width: 100%;
     top: 0 !important;
     left: 0 !important;
-    z-index: 3;
     cursor: default;
+    transition: all .25s .25s ease;
 
     @include break {
       min-height: 100vh;
@@ -200,8 +190,8 @@
     }
 
     .strip__inner-text {
+      top: 50%;
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
     }
   }
 }
@@ -229,7 +219,6 @@
   z-index: 10;
   @include easeOut;
   cursor: pointer;
-  transition-delay: 0.5s;
   display: block;
   width: 16px;
   height: 16px;
