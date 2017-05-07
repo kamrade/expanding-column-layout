@@ -1,10 +1,14 @@
 .app-container {
   position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 .sidebar {
-  position: absolute;
-
+  height: 100%;
+  width: $sidebar-width;
+  background: $color-panel;
+  float: left;
 }
 
 .strips {
@@ -12,6 +16,7 @@
   text-align: center;
   overflow: hidden;
   color: white;
+  position: relative;
 
   &__strip {
     will-change: width, left, z-index, height;
@@ -27,19 +32,19 @@
     }
 
     &:nth-child(2) {
-      left: 20vw;
+      left: 20%;
     }
 
     &:nth-child(3) {
-      left: 40vw;
+      left: 40%;
     }
 
     &:nth-child(4) {
-      left: 60vw;
+      left: 60%;
     }
 
     &:nth-child(5) {
-      left: 80vw;
+      left: 80%;
     }
 
     &:nth-child(1) {
