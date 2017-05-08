@@ -43,6 +43,7 @@
 
       .strip__content {
         background: $color2;
+        // background: linear-gradient(135deg, #044f48, #2a75ff);
         transform: translate3d(0, 100%, 0);
         animation-name: strip2;
         animation-delay: 0.2s;
